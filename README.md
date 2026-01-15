@@ -10,4 +10,5 @@ Step outside your favorite RPG, MMO or fantasy novel -- without the grind of eve
 ## Roadmap  
   - create CLI
   - create ability to navigate postings
+  - add instructions to readme
   - create demo
