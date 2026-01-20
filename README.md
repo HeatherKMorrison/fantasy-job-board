@@ -8,7 +8,7 @@ Step outside your favorite RPG, MMO or fantasy novel -- without the grind of eve
 - converts job postings to fantasy-style quests
   
 ## Roadmap  
-  - create CLI
+  - use generated text for the CLI
   - create ability to navigate postings
   - add instructions to readme
   - create demo
