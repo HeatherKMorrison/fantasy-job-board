@@ -7,9 +7,21 @@ import torch
 #Key and email
 access = {"User-Agent": "user@example.com", "Authorization-Key": "<key>"}
 
-#Request job title or type
-job = "BARISTA"
-url = f"https://data.usajobs.gov/api/Search?Keyword={job}"
+#job title or type
+confirm = False
+while (confirm == False):
+    job = input("How do you aim to earn your coin, adventurer? ")
+    s_job = job.strip()
+    print(s_job.capitalize() + ". Shall it be so?")
+    aye_nay = False
+    while (aye_nay == False):
+        reply = input("(A)ye or (N)ay: ").lower()
+        if reply.startswith("a") or reply.startswith("n"):
+            aye_nay = True
+        if reply.startswith("a"):
+            confirm = True
+            r_job = s_job.replace(" ", "+")
+url = f"https://data.usajobs.gov/api/Search?Keyword={r_job}"
 
 response = requests.get(url, headers=access)
 postings = response.json()
@@ -25,7 +37,7 @@ benefits = content.get('Benefits', 'The reward is in the job itself.')
 
 text_input = title + " \n" + summary + " \n" + duties + " \n" + qualifications + " \n" + benefits
 
-#print(text_input)
+
 #Load adapted model
 adapter_path = r"adapters\corpora\fantasy_adapter" #Windows
 
